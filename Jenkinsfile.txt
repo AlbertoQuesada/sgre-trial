@@ -1,0 +1,37 @@
+pipeline {
+	agent any
+	
+	stages {
+		stage('Environment preparation') {
+			steps {
+				echo '-=- Preparing project environment -=-'
+				sh 'pip install -r requirements.txt'
+			}
+		}
+		stage('Run unit test') {
+			steps {
+				echo 'Executing unit test'
+			}
+		}
+		stage('Containerization') {
+			steps {
+				echo 'Containerization...'
+			}
+		}
+		stage('Artifactory Configuration') {
+			steps {
+				echo 'Artifactory...'
+			}
+		}
+		stage('Upload artifact') {
+			steps {
+				echo 'Upload...'
+			}
+		}
+		stage('Publish build info') {
+			steps {
+				echo 'Publish...'
+			}
+		}
+	}
+}
